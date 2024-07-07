@@ -1,0 +1,341 @@
+/* -------------------Enquire form ------------------ */
+
+.substitle {
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  font-weight: 400;
+  color: #303030;
+}
+.head {
+  font-family: var(--fontFamily);
+  font-size: 30px !important;
+  font-weight: 700;
+  color: #303030 !important;
+}
+.labelname {
+  font-family: "Inter";
+  font-size: 16px !important;
+  font-weight: 400;
+  color: #303030 !important;
+}
+
+.custom-selec {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/downup.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-sele {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 10px;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.customMessage {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  margin-top: 5px;
+  height: 187px;
+  resize: none;
+}
+.btn {
+  background-color: #59a946 !important;
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  color: white !important;
+  font-size: 16px;
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.btnre {
+  background-color: white;
+  padding: 15px 30px 15px 30px;
+  border-radius: 10px;
+  color: #59a946;
+  font-size: 16px;
+  margin-left: 20px;
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  border: 1px solid #59a946;
+  cursor: pointer;
+}
+.boderstyle {
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.innersectionsty {
+  margin: 25px;
+}
+
+/* -------------------Pop Up form ------------------ */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: -30%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  background-position: top;
+  height: auto;
+  background-size: cover;
+  background-color: #000 !important;
+}
+
+.boderstylepop {
+  border-radius: 8px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.circleclose {
+  width: 40px;
+  height: 40px;
+}
+.classy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.custom-selecfirst {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/User.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-selecpp {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/phone.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-selecee {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/envelope.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-selecdd {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/downup.svg");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-selecaddress {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/Build.svg");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+
+.custom-selecbuild {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/Build.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 20px; /* Adjust spacing for the arrow */
+}
+.custom-selecsign {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+  background-image: url("../public/images/signs-post.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+.custom-seleccv {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: var(--bgColorPrimary);
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  margin-top: 5px; /* Adjust spacing */
+  appearance: none; /* Remove default arrow */
+
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  padding-right: 25px; /* Adjust spacing for the arrow */
+}
+.Browse {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: transparent;
+  color: #8b8e8f;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  padding-left: 10px;
+
+  padding-right: 10px; /* Adjust spacing for the arrow */
+}
+.Browsebtn {
+  padding: 5px 10px 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #8b8e8f;
+  background-color: var(--bgColorPrimary);
+  color: white;
+  font-size: 10px;
+  font-family: var(--fontFamily);
+  font-weight: 400;
+}
+.format {
+  margin-top: 5px;
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  font-size: 12px;
+  color: "#8B8E8F";
+}
