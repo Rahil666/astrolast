@@ -88,14 +88,20 @@ const Blog = () => {
                 return (
                   <div key={index}>
                     <div className="boxZodiablogmain">
-                      <div className="secboxzodiablog mt-4">
-                        {box.b_type === "image" ? (
+                      <div className="secboxzodiablog   mt-4">
+                        {box.b_type === "image" && (
                           <img src={mediaUrl} alt={box.b_title} className="boximagezodiablog" />
-                        ) : (
+                        )}
+                        {box.b_type  === "video" && (
                           <video controls className="boxvideozodiablog">
                             <source src={mediaUrl} type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
+                        )}
+                        {box.b_type  === "text" && (
+<div >
+                          <h5>{box.b_source}</h5>
+                          </div>
                         )}
                       </div>
                       <p className="SubZodiablogmain">{box.b_title}</p>
