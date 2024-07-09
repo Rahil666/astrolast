@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "@splidejs/react-splide/css";
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 export default function Ourteams() {
   const { t } = useTranslation();
   const boxeshorcopse = [
@@ -18,6 +19,30 @@ export default function Ourteams() {
 
  
   ];
+
+  // team api
+
+  useEffect(() => {
+    Team()
+    
+  }, [])
+  
+
+  const [teamlist, setteamlist] = useState([])
+
+  const Team = async ( ) => {
+
+    try {
+
+      const Teamresp = await axios.get('https://lunarsenterprises.com:5005/jyothisham/list/team')
+
+      setteamlist(Teamresp.data.data)
+      console.log(Teamresp.data, 'Teamresp.data');
+      
+    } catch (error) {
+      
+    }
+  }
 
   return (
 
@@ -49,13 +74,15 @@ export default function Ourteams() {
   <p className="Zodiaser">  {t('Dive into the mystical world of astrology and discover the secrets written in the stars.Our experts provide insights and guidance based on your unique astrological profile.')}</p>
         <div className="col-lg-12 mt-5 container">
         <div className="box-gridcontact">
-          {boxeshorcopse.map((box, index) => (
+          {teamlist?.map((box, index) => (
             <div className="boxZodiateam" key={index} >
               <div className="secboxzodiateam mt-4">
-                <img src={box.image} alt={box.title} className="boximagezodiateam" />
+                <img src={`https://lunarsenterprises.com:5005/${box.t_image}`}
+                
+                alt={box.title} className="boximagezodiateam" />
               </div>
-              <h4 className="Zodiaheadteam mt-2">{box.title}</h4>
-              <p className="SubZodiaheadteam">{box.subtitle} </p>
+              <h4 className="Zodiaheadteam mt-2">{box.t_name}</h4>
+              <p className="SubZodiaheadteam">{box.t_designation} </p>
             </div>
           ))}
         </div>

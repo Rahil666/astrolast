@@ -1594,6 +1594,8 @@ border: none;
 .boxvideozodiablog {
   width: 100%; /* Adjust as needed */
   height:200px;
+  background-color: #2596be;
+  object-fit: cover;
 }
 
 .SubZodiablogmain {

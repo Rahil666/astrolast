@@ -30,8 +30,8 @@ export default function Footer() {
             <div className='col-lg-2'>
               <h5>LINK</h5>
               <ul className='footer-nav'>
-                <li><Link href="/mep">Term Of Use</Link></li>
-                <li> <Link href="/sales-services">Privacy Policy</Link></li>
+                <li><Link href="/termsandcondition">Terms and Condition</Link></li>
+                <li> <Link href="/termsandcondition">Privacy Policy</Link></li>
                 
                 
               </ul>
@@ -57,7 +57,7 @@ export default function Footer() {
       
       </div>
       <div className='copy-right'>
-        <div className='copy-right-text'>copyrights</div>
+        <div className='copy-right-text'>© 2024, Powered by Astrology</div>
       </div>
     </>
   )

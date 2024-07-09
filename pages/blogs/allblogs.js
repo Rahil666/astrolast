@@ -1,21 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { FaRegCommentAlt } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+
 const Blog = () => {
   const [comments, setComments] = useState([]);
   const [showAllComments, setShowAllComments] = useState({});
   const [showCommentInput, setShowCommentInput] = useState(null);
   const { t } = useTranslation();
 
-  const boxeshorcopseblogmain = [
-    { title: "Name 1", type: "image", source: "/Assets/blog1.", subtitle: 'Lorem ipsum dolor sit.' },
-    { title: "Name 2", type: "video", source: "/Assets/WhatsAppvido.mp4", subtitle: 'Lorem ipsum dolor sit.' },
-    { title: "Name 3", type: "image", source: "/Assets/two.png", subtitle: 'Lorem ipsum dolor sit.' },
-    { title: "Name 4", type: "image", source: "/Assets/three.png", subtitle: 'Lorem ipsum dolor sit.' },
-    { title: "Name 5", type: "video", source: "/Assets/secvid.mp4", subtitle: 'm ipsum dolor sit.' },
-    { title: "Name 6", type: "image", source: "/Assets/one.png", subtitle: 'Lorem ipsum dolor sit.' },
-  ];
-  
+  const baseUrl = 'https://lunarsenterprises.com:5005/'; 
+
+  const [boxeshorcopseblogmain, setboxeshorcopseblogmain] = useState([]);
+
+  const Bloglist = async () => {
+    try {
+      const Blogresp = await axios.get(`${baseUrl}jyothisham/list/blog`);
+      setboxeshorcopseblogmain(Blogresp.data.data);  
+      console.log(Blogresp.data.data, 'Blogresp.data');
+    } catch (error) {
+      console.error('Error fetching blog list:', error);  
+    }
+  };
+
+  useEffect(() => {
+    Bloglist();  // Ensure Bloglist is called
+  }, []);
 
   const addComment = (boxIndex, text) => {
     const newComment = { boxIndex, text, date: new Date() };
@@ -71,53 +81,62 @@ const Blog = () => {
           </p>
           <div className="col-lg-12 mt-5 container">
             <div className="box-gridblogmain">
-              {boxeshorcopseblogmain.map((box, index) => (
-                <div key={index}>
-                  <div className="boxZodiablogmain">
-                    <div className="secboxzodiablog mt-4">
-                    {box.type === "image" ? (
-                      <img src={box.source} alt={box.title} className="boximagezodiablog" />
-                    ) :( <video controls className="boxvideozodiablog">
-                      <source src={box.source} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  )}
-                    </div>
-                    <p className="SubZodiablogmain">{box.subtitle}</p>
-                    <div className='stylesblog'>
-                      <p className='' onClick={() => toggleCommentInput(index)}>
-                        <FaRegCommentAlt /> {' '}Comments <span>{comments.filter(comment => comment.boxIndex === index).length}</span>
-                      </p>
-                      <div className=''>
-                        {comments.filter(comment => comment.boxIndex === index).slice(0, showAllComments[index] ? comments.length : 1).reverse().map((comment, commentIndex) => (
-                          <p className='Seemorebutton' key={commentIndex}>
-                            {comment.text} - {getDaysAgo(comment.date)} days ago {' '}
-                          </p>
-                        ))}
-                        {comments.filter(comment => comment.boxIndex === index).length > 1 && (
-                          <div className='Seemorebu' onClick={() => toggleComments(index)}>
-                            {showAllComments[index] ? 'Show Less' : 'See More'}
-                          </div>
+              {boxeshorcopseblogmain.map((box, index) => {
+                const mediaUrl = `${baseUrl}${box.b_source}`;
+                console.log(mediaUrl); // Log the formed URL
+
+                return (
+                  <div key={index}>
+                    <div className="boxZodiablogmain">
+                      <div className="secboxzodiablog mt-4">
+                        {box.b_type === "image" ? (
+                          <img src={mediaUrl} alt={box.b_title} className="boximagezodiablog" />
+                        ) : (
+                          <video controls className="boxvideozodiablog">
+                            <source src={mediaUrl} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
                         )}
                       </div>
+                      <p className="SubZodiablogmain">{box.b_title}</p>
+                      <div className='stylesblog'>
+                        <p className='' onClick={() => toggleCommentInput(index)}>
+                          <FaRegCommentAlt /> {' '}Comments <span>{comments.filter(comment => comment.boxIndex === index).length}</span>
+                        </p>
+                        <div className=''>
+                          {comments.filter(comment => comment.boxIndex === index).slice(0, showAllComments[index] ? comments.length : 1).reverse().map((comment, commentIndex) => (
+                            <p className='Seemorebutton' key={commentIndex}>
+                              {comment.text} - {getDaysAgo(comment.date)} days ago {' '}
+                            </p>
+                          ))}
+                          {comments.filter(comment => comment.boxIndex === index).length > 1 && (
+                            <div className='Seemorebu' onClick={() => toggleComments(index)}>
+                              {showAllComments[index] ? 'Show Less' : 'See More'}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      {showCommentInput === index && (
+                        <input
+                          className='inputstyleblog'
+                          type="text"
+                          placeholder="Add a comment"
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' && e.target.value) {
+                              addComment(index, e.target.value);
+                              e.target.value = '';
+                            }
+                          }}
+                        />
+                      )}
                     </div>
-                    {showCommentInput === index && (
-                      <input
-                        className='inputstyleblog'
-                        type="text"
-                        placeholder="Add a comment"
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' && e.target.value) {
-                            addComment(index, e.target.value);
-                            e.target.value = '';
-                          }
-                        }}
-                      />
-                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
+            
+            
           </div>
         </div>
       </div>
